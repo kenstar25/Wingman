@@ -1,39 +1,14 @@
-* {
-	font-family: 'Wendy One', sans-serif;
-	color: red;
-
-}
-
-h1,h2,h3,h4,h5,h6 {
-	color: red;
-	font-family: 'Wendy One', sans-serif;
-}
-
 .header {
-	height: 100px;
-	width: 100%;
-	background-color: #FFB732;
-	border: solid red 2px;
-	z-index: 10;
-	top: 0;
-	font-family: 'Wendy One', sans-serif;
-}
-
-.container {
-	padding-left: 0px;
-	padding-right: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
+	height: 50px;
 	max-width: 100%;
+	background-color: #FFB800;
+	top: 0;
+	font-family: 'Wendy One'
 }
 
-#header_logo {
-	height: 95px;
-	width: 150px;
-}
-
-#header_row {
-	height: 100px;
+#logo {
+	height: 50px;
+	width: 50px;
 }
 
 .left_header {
@@ -42,69 +17,86 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #header_wingman {
-	color: red;
-    font-size: 50px;
-    padding-left: 10px;
-    padding-top: 17px;
-}
-
-#header_wingman:hover {
-	color:white;
+	color: white;
+    font-size: 40px;
+    padding-top: 1px;
 }
 
 .header_right_text {
-	color: red;
-	float:right;
-	font-size: 35px;
+	color: black;
+	float: right;
+	font-size: 25px;
+	margin-top: 11px;
 	margin-right: 25px;
-	padding-top: 23px;
 }
 
 .header_text:hover {
-	cursor: pointer;
 	color: white;
 }
 
-.hero_image_container {
+.hero-bar {
 	text-align: center;
+	background-image: url("http://moziru.com/images/urban-clipart-city-building-8.jpg");
+	height: 600px;
+	margin-bottom: -5%;
 }
 
-#hero_image {
-	height: 500px;
+.hero-txt {
+	height: 150px;
+	max-width: 100%;
+	background-color: black;
 }
 
-#hero_text {
-	color:red;
-	margin-top: 30%;
-    margin-left: 10%;
+#hero-txt {
+	color: #FFB800;
+	font-family: 'times new roman';
+	font-size: 50px;
+	font-weight: bold;
+    margin-left: 5%;
     text-align: center;
 }
 
-.section_header {
-	margin-top: 25px;
+.featured-bar {
+	background-color: #FFB800;
+	height: 500px;
+	max-width: 100%;
+	color: black;
 	text-align: center;
+	font-family: 'times new roman';
 }
 
-.wings_week_text {
-	margin-top: 119px;
-    padding-left: 100px;
-    padding-right: 100px;
+.featured-txt {
+	
+	font-size: 50px;
+	font-weight: bold;
+	padding-top: 2%;
+	margin-bottom: 5%;
 }
 
-#wing_week_image {
-	height: 300px;
-	width: 400px;
-	margin-top: 25px;
+p {
+	font-size: 24px;
+	padding-top: 5%;
+	padding-left: 20%;
 }
 
-.section_separator {
+.community-bar {
+	background-color: white;
+	height: 500px;
+	max-width: 100%;
+}
+
+
+.community-header{
+	color: black;
 	text-align: center;
-	margin-top: 25px;
+	font-family: 'times new roman';
+	font-size: 50px;
+	margin-top: 2%;
 }
 
 .community_photo {
-	height: 250px;
-	width: 250px;
+	height: 300px;
+	width: 300px;
 }
 
 .image_box {
@@ -115,10 +107,48 @@ h1,h2,h3,h4,h5,h6 {
 	margin-top: 25px;
 }
 
-.search-table {
+.footer {
+	background-color: black;
+	height: 95px;
+	max-width: 100%;
+}
+
+#footer-txt {
+	color: white;
+	font-size: 10px;
+	margin-top: 15px;
 	text-align: center;
 }
 
-#search {
+.links {
+	color: white;
+	font-family: 'Wendy One';
+	font-size: 20px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.links:hover {
+	color: #FFB800;
+}
+
+
+#email-field {
+	margin-top: 0%;
 	text-align: center;
+	margin-left: 33%;
+}
+
+#copyright {
+	font-size: 10px;
+	color: white;
+	padding-top: 15%;
+	float: right;
+	padding-right: 15px;
+}
+
+.searchpage-background {
+	background-color: black;
+	max-width: 100%;
+	max-height: 100%;
 }

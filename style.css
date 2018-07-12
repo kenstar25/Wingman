@@ -1,0 +1,124 @@
+* {
+	font-family: 'Wendy One', sans-serif;
+	color: red;
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: red;
+	font-family: 'Wendy One', sans-serif;
+}
+
+.header {
+	height: 100px;
+	width: 100%;
+	background-color: #FFB732;
+	border: solid red 2px;
+	z-index: 10;
+	top: 0;
+	font-family: 'Wendy One', sans-serif;
+}
+
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	max-width: 100%;
+}
+
+#header_logo {
+	height: 95px;
+	width: 150px;
+}
+
+#header_row {
+	height: 100px;
+}
+
+.left_header {
+	padding-left: 16px;
+	display: inline-flex;
+}
+
+#header_wingman {
+	color: red;
+    font-size: 50px;
+    padding-left: 10px;
+    padding-top: 17px;
+}
+
+#header_wingman:hover {
+	color:white;
+}
+
+.header_right_text {
+	color: red;
+	float:right;
+	font-size: 35px;
+	margin-right: 25px;
+	padding-top: 23px;
+}
+
+.header_text:hover {
+	cursor: pointer;
+	color: white;
+}
+
+.hero_image_container {
+	text-align: center;
+}
+
+#hero_image {
+	height: 500px;
+}
+
+#hero_text {
+	color:red;
+	margin-top: 30%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+.section_header {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.wings_week_text {
+	margin-top: 119px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#wing_week_image {
+	height: 300px;
+	width: 400px;
+	margin-top: 25px;
+}
+
+.section_separator {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.community_photo {
+	height: 250px;
+	width: 250px;
+}
+
+.image_box {
+	text-align: center;
+}
+
+.community_images {
+	margin-top: 25px;
+}
+
+.search-table {
+	text-align: center;
+}
+
+#search {
+	text-align: center;
+}

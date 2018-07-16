@@ -1,0 +1,13 @@
+{
+	"name": "loyola-club-app",
+	"version": "0.0.0",
+	"description": "A sample Node.js app using Express 4",
+	"main": "app.js",
+	"dependencies": {
+		"mysql": "^2.5.4",
+		"express": "^4.13.3"
+	},
+	"engines": {
+		"node": "4.0.0"
+	}
+}

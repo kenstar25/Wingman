@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
-	console.log("am i get here?")
+	console.log("am i working")
 
 	$.ajax();
+
+    clicksearch();
 
 	})
 
@@ -16,16 +18,52 @@ $(document).ready(function() {
     },
 
     success: function(data) {
-        console.log(data);
-        $('#row1').html(data[0].Name); 
-        $('#row2').html(data[0].Phone);
-        $('#row3').html(data[0].Website); 
-        $('#row4').html(data[0].Street_Address);
-        $('#row5').html(data[0].Zip_Code); 
-        $('#row6').html(data[0].Hours);
-        $('#row7').html(data[0].Rating);
+        
+    console.log(data);
+
+        for (var i = 0; i < 5; i++) {
+
+            $('.inforeq').append(
+                    "<tr class='tablerow'>"
+                    +"<td><img class='tableimg' src='"+data[i].Image_Url+"'/></td>"
+                    +"<td><a href='"+data[i].Website+"'>"
+                    +"<h4>"+data[i].Name+"</h4></a>"
+                    +"</td>"
+                    +"<td class='colTabPhone'>"+data[i].Phone+"</td>"
+                    +"<td>"+data[i].Street_Address+"</td>"
+                    +"<td>"+data[i].Zip_Code+"</td>"
+                    +"<td class='colTabHours'>"+data[i].Hours+"</td>"
+                    +"<td>"+data[i].Rating+"</td>"
+                    );   
+            }
     },
 
     error: function(xhr, status, error) { console.log("ERROR: ", error)}
     
-});
+    });
+
+function clicksearch(){
+
+    $("#searchbutton").click(function(){
+        var kensseachterm = $("#searchbar").val()
+        console.log(kensseachterm);
+
+        $.ajax({
+            method: "GET",
+            url: "/kens-second-route?searchfunction="+kensseachterm,
+            dataType: 'json',
+            headers: {
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Headers':'*'
+            },
+
+            success: function(data) {
+                
+            console.log(data);
+
+            }
+        });
+    })
+
+
+}

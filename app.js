@@ -27,12 +27,6 @@ app.get('/', function(req, res) {
  
  })
 
-app.get('/profs', function(req, res) {
-
-   res.sendFile(path.resolve('Public/prof-table.html'));
- 
- })
-
 ///////////////////////////////////////////////////////
 
 app.get('/kens-first-route', function(req,res){
@@ -65,10 +59,33 @@ app.get('/kens-first-route', function(req,res){
 //	res.send('hello world - this is the respone');
 
 
-app.post('/kens-second-route', function (req,res){
+app.get('/kens-second-route', function(req,res){
 
-	console.log('hello world');
-	// res.send('hello world - this is the response');
+	var searchTerm = req.query.searchfunction
+
+	console.log(searchTerm);
+
+
+	pool.getConnection(function(err,connection) {
+
+		var sqlQuery = "SELECT * FROM WING_SPOTS WHERE Name LIKE '%"+searchTerm+"%';"
+		console.log(sqlQuery);
+		// use the connection
+		connection.query(sqlQuery, function (error, results, fields) {
+
+			connection.release();
+
+			if(!err) {
+
+			  res.json(results);
+
+			}
+
+
+		});
+
+	});
+
 
 });
 

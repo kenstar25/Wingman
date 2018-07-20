@@ -3,12 +3,17 @@
 	max-width: 100%;
 	background-color: #FFB800;
 	top: 0;
-	font-family: 'Wendy One'
+	font-family: 'Wendy One';
+}
+
+body {
+  cursor: url(https://cdn0.iconfinder.com/data/icons/foody-icons/32/FoodyIcons_color-02-512.png), auto;
 }
 
 #logo {
 	height: 50px;
 	width: 50px;
+	margin-left: 1%;
 }
 
 .left_header {
@@ -64,6 +69,11 @@
 	color: black;
 	text-align: center;
 	font-family: 'times new roman';
+}
+
+#featuredimage {
+	border-radius: 200px;
+	margin-top: -3%;
 }
 
 .featured-txt {
@@ -180,28 +190,14 @@ h5 {
 	width: 60%;
 }
 
-.searchbutton{ 
+#searchbutton{ 
 	margin-left: 46%;
 	margin-top: 2%;
 	 }
 
-.searchbutton:hover {
+#searchbutton:hover {
   background: #ff7300;
   text-decoration: none;
-}
-
-
-.calendarbg {
-	background-color: black;
-	height: 100px;
-	max-width: 100%;
-	color: white;
-	text-align: center;
-}
-
-#calendartitle {
-	padding-top: 2%;
-	font-size: 40px;
 }
 
 .inforeq {
@@ -239,11 +235,70 @@ h4 {
 
 .colTabHours {
 	padding: 4%;
-
 }
 
 .footersearch {
 	background-color: black;
 	height: 95px;
 	max-width: 100%;
+}
+
+#add-button {
+	margin-bottom: 1%;
+}
+.modalheader {
+	color: white;
+    font-size: 40px;
+    padding-top: 2%;
+    background-color: #FFB800;
+    text-align: center;
+    font-family: 'Wendy One';
+    margin-top: -2%;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    text-align: right;
+    font-size: 38px;
+    font-weight: bold;
+    margin-top: -5%;
+    margin-right: -4%;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#Address{
+	width: 90%;
+}
+
+#Hours{
+	width: 95%;
+}
+
+#Image-URL{
+	width: 100%;
 }

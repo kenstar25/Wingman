@@ -6,6 +6,10 @@ $(document).ready(function() {
 
     clicksearch();
 
+    modaltrigger();
+
+    addnewrestaurant();
+
 	})
 
 	$.ajax({
@@ -59,7 +63,36 @@ function clicksearch(){
 
             success: function(data) {
                 
-            console.log(data);
+            $(".inforeq").empty();
+
+            $(".inforeq").append(
+                "<tr class='tableheader'>"
+                +"<th>"
+                +"</th>"
+                +"<th>Name</th>"
+                +"<th>Phone</th>"
+                +"<th>Address</th>"
+                +"<th>Zip</th>"
+                +"<th>Hours</th>"
+                +"<th class='ratinghead'>Rating</th>"
+                );
+
+
+            for (var i = 0; i < 5; i++) {
+
+            $('.inforeq').append(
+                    "<tr class='tablerow'>"
+                    +"<td><img class='tableimg' src='"+data[i].Image_Url+"'/></td>"
+                    +"<td><a href='"+data[i].Website+"'>"
+                    +"<h4>"+data[i].Name+"</h4></a>"
+                    +"</td>"
+                    +"<td class='colTabPhone'>"+data[i].Phone+"</td>"
+                    +"<td>"+data[i].Street_Address+"</td>"
+                    +"<td>"+data[i].Zip_Code+"</td>"
+                    +"<td class='colTabHours'>"+data[i].Hours+"</td>"
+                    +"<td>"+data[i].Rating+"</td>"
+                    );   
+            }
 
             }
         });
@@ -67,3 +100,52 @@ function clicksearch(){
 
 
 }
+
+    function modaltrigger(){
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById('add-button');
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+};
+
+
+
+var $name = $('#Name')
+var $phone = $('#Phone')
+var $address = $('#Address')
+var $zip = $('#zip')
+var $hours = $('#Hours')
+var $img = $('#Image-Url')
+
+
+function addnewrestaurant(){
+
+    $("#submitbutton").click(function(){
+        
+        $(".submitfields").hide();
+        $(".ty").show();
+
+        $.ajax({
+            method: "POST",
+            url: "/kens-third-route",
+            success: function(data) {
+
+                $('#submitfields').append
+
+    }),
+            error:
+};

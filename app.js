@@ -16,7 +16,7 @@ var pool = mysql.createPool({
 });
 
 
-console.log(pool.host);
+console.log(process.env.DB_HOST);
 
 var path = require('path');
 

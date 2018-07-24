@@ -34,7 +34,7 @@ app.get('/', function(req, res) {
 
 app.get('/search', function(req, res) {
 
-   res.sendFile(path.resolve('Public/home-page.html'));
+   res.sendFile(path.resolve('Public/Search-page.html'));
  
  });
 

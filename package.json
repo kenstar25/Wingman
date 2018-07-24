@@ -12,6 +12,6 @@
 		"body-parser": "^1.13.1"
 	},
 	"engines": {
-		"node": "4.0.0"
+		"node": "4.7.0"
 	}
 }

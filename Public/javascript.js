@@ -25,7 +25,7 @@ $(document).ready(function() {
         
     console.log(data);
 
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 10; i++) {
 
             $('.inforeq').append(
                     "<tr class='tablerow'>"
@@ -78,7 +78,7 @@ function clicksearch(){
                 );
 
 
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 10; i++) {
 
             $('.inforeq').append(
                     "<tr class='tablerow'>"
@@ -122,30 +122,53 @@ function clicksearch(){
 
 };
 
-
-
-var $name = $('#Name')
-var $phone = $('#Phone')
-var $address = $('#Address')
-var $zip = $('#zip')
-var $hours = $('#Hours')
-var $img = $('#Image-Url')
-
-
 function addnewrestaurant(){
 
     $("#submitbutton").click(function(){
-        
-        $(".submitfields").hide();
-        $(".ty").show();
+            var name = $('#Name').val()
+            var phone = $('#Phone').val()
+            var address = $('#Address').val()
+            var zip = $('#Zip').val()
+            var hours = $('#Hours').val()
+            var website = $('#Website').val()
+            var img = $('#Image-URL').val()
+            console.log(name)
 
-        $.ajax({
-            method: "POST",
-            url: "/kens-third-route",
-            success: function(data) {
 
-                $('#submitfields').append
+        $.post("/kens-third-route", {
+                "ID": 1000,
+                "Name": name,
+                "Phone": phone,
+                "Street_Address": address,
+                "Zip_Code": zip,
+                "Hours": hours,
+                "Website": website,
+                "Image_Url": img
 
-    }),
-            error:
-};
+            }, function(data, status){
+
+                $(".submitfields").hide();
+
+                $("#submitbutton").css("display", "none");
+
+                $(".ty").show();
+
+                $('.inforeq').append(
+                    "<tr class='tablerow'>"
+                    +"<td><img class='tableimg' src='"+img+"'/></td>"
+                    +"<td><a href='"+website+"'>"
+                    +"<h4>"+name+"</h4></a>"
+                    +"</td>"
+                    +"<td class='colTabPhone'>"+phone+"</td>"
+                    +"<td>"
+                    +address+"</td>"
+                    +"<td>"+zip+"</td>"
+                    +"<td class='colTabHours'>"+hours+"</td>"
+                    +"<td>"+rating+"</td>"
+                    );   
+
+                console.log(data)
+            });
+
+    });
+}

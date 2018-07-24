@@ -5,7 +5,8 @@
 	"main": "app.js",
 	"dependencies": {
 		"mysql": "^2.5.4",
-		"express": "^4.13.3"
+		"express": "^4.13.3",
+		"body-parser": "^1.13.1"
 	},
 	"engines": {
 		"node": "4.0.0"

@@ -1,6 +1,7 @@
 const express = require('express');
 var mysql = require('mysql');
 const app = express();
+var bodyParser = require('body-parser');
 
 
 
@@ -17,7 +18,8 @@ var pool = mysql.createPool({
 var path = require('path');
 
 app.use(express.static(__dirname + '/Public')); // set the static files location /public/img will be /img for users
-
+app.use(bodyParser.urlencoded({limit: '50mb',extended: true}));
+app.use(bodyParser.json({limit: '50mb'}));
 
 //Frontend route
 
@@ -25,7 +27,7 @@ app.get('/', function(req, res) {
 
    res.sendFile(path.resolve('Public/home-page.html'));
  
- })
+ });
 
 ///////////////////////////////////////////////////////
 
@@ -88,6 +90,46 @@ app.get('/kens-second-route', function(req,res){
 
 
 });
+
+
+app.post('/kens-third-route', function(req,res){
+
+	var ID = req.body.ID
+	var Name = req.body.Name
+	var Phone = req.body.Phone
+	var Address = req.body.Street_Address
+	var Zip_Code = req.body.Zip_Code
+	var Hours = req.body.Hours
+	var Website = req.body.Website
+	var Image_URL = req.body.Image_URL
+
+
+
+	pool.getConnection(function(err,connection) {
+	
+		var sqlQuery = "INSERT INTO WING_SPOTS (Name, Phone, Street_Address, Zip_Code, Hours, Website, Image_URL) VALUES('"+Name+"', '"+Phone+"', '"+Address+"', '"+Zip_Code+"', '"+Hours+"', '"+Website+"', '"+Image_URL+"');"
+		console.log(sqlQuery);
+		// use the connection
+		connection.query(sqlQuery, function (error, results, fields) {
+
+			connection.release();
+
+			if(!error) {
+				console.log("IS THERE A SUCCESS?", results)
+			  res.json(results);
+
+			}else{
+				console.log("ERROR: ", error)
+			}
+
+
+		});
+
+	});
+
+
+});
+
 
 
 app.listen(3000, function(){ console.log('Example app listening on port 3000!')})

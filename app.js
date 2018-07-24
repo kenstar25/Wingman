@@ -32,6 +32,12 @@ app.get('/', function(req, res) {
  
  });
 
+app.get('/search', function(req, res) {
+
+   res.sendFile(path.resolve('Public/home-page.html'));
+ 
+ });
+
 ///////////////////////////////////////////////////////
 
 app.get('/kens-first-route', function(req,res){

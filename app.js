@@ -25,7 +25,7 @@ app.use(bodyParser.json({limit: '50mb'}));
 
 app.get('/', function(req, res) {
 
-   res.sendFile(path.resolve(__dirname +'Public/home-page.html'));
+   res.sendFile(path.resolve('Public/home-page.html'));
  
  });
 
@@ -130,6 +130,6 @@ app.post('/kens-third-route', function(req,res){
 
 });
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 
 app.listen(port, function(){ console.log('Example app listening on port 3000!')})

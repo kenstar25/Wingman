@@ -15,6 +15,9 @@ var pool = mysql.createPool({
 	database: process.env.DB_DATABASE ||'wingman'
 });
 
+
+console.log(pool.host);
+
 var path = require('path');
 
 app.use(express.static(__dirname + '/Public')); // set the static files location /public/img will be /img for users
@@ -29,11 +32,6 @@ app.get('/', function(req, res) {
  
  });
 
-app.get('/search', function(req, res) {
-
-   res.sendFile(path.resolve('Public/Search-page.html'));
- 
- });
 ///////////////////////////////////////////////////////
 
 app.get('/kens-first-route', function(req,res){

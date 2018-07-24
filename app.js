@@ -9,10 +9,10 @@ var bodyParser = require('body-parser');
 
 
 var pool = mysql.createPool({
-	host	: 'localhost',
-	user	: 'root',
-	password: 'root',
-	database: 'wingman'
+	host	: process.env.DB_HOST || 'localhost',
+	user	: process.env.DB_USERNAME || 'root',
+	password: process.env.DB_PASSWORD ||'root',
+	database: process.env.DB_DATABASE ||'wingman'
 });
 
 var path = require('path');
@@ -130,6 +130,6 @@ app.post('/kens-third-route', function(req,res){
 
 });
 
+var port = process.env.PORT || 3000;
 
-
-app.listen(3000, function(){ console.log('Example app listening on port 3000!')})
+app.listen(port, function(){ console.log('Example app listening on port 3000!')})

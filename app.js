@@ -9,14 +9,14 @@ var bodyParser = require('body-parser');
 
 
 var pool = mysql.createPool({
-	host	: process.env.DB_HOST || 'localhost',
+	host: process.env.DB_HOST,
 	user	: process.env.DB_USERNAME || 'root',
 	password: process.env.DB_PASSWORD ||'root',
 	database: process.env.DB_DATABASE ||'wingman'
 });
 
 
-console.log(process.env.DB_HOST);
+console.log(pool.host);
 
 var path = require('path');
 
